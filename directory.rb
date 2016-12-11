@@ -1,53 +1,61 @@
-#first we print the list of students
+def interactive_menu
+  loop do
+   # 1. Print the menue and ask the user what to do
+   puts "1. Input the students"
+   puts "2. Show the students"
+   puts "9. Exit" #9 because we will add more items
 
-
-def print_header
-  puts "The students of Villains Academy"
-  puts " ---------------- "
-end
+   # 2. read the input and save it into a variable
+   selection = gets.chomp
+   # 3. do what the user has asked
+   case selection
+   when "1"
+     students = input_students
+   when "2"
+     print_header
+     print(students)
+     print_footer(students)
+   when "9"
+     exit #this will cause the program to terminate
+   else
+     puts "I don't know what you meant, try again please."
+   end
+ end
+ end
 
 def input_students
-  puts "Please enter the name of the students"
+  puts "Please enter the names of the students"
   puts "To finish, just hit return twice"
-  #create an empty array
+  # create an empty array
   students = []
   # get the first name
   name = gets.chomp
-  #while the name is not empty, repeat this code
+  # while the name is not empty, repeat this code
   while !name.empty? do
-    #add the student hash to the array
-
+    # add the student hash to the array
     students << {name: name, cohort: :november}
     puts "Now we have #{students.count} students"
-    #get another name from user
+    # get another name from the user
     name = gets.chomp
   end
-
-  #return the array of students
-
+  # return the array of students
   students
+end
+
+def print_header
+  puts "The students of Villains Academy"
+  puts "-------------"
+end
+
+def print(students)
+  students.each do |student|
+    puts "#{student[:name]} (#{student[:cohort]} cohort)"
   end
+end
 
-  def print(students)
-     puts "Please enter the first letter of the student's name:"
-     letter = gets.chomp.downcase
-     select_students = students.select { |student| student[:name][0] == letter }
-      select_students.each.with_index(1) do |student, i|
-        puts "#{i}: #{select_students[0]} (#{student[:cohort]} cohort)"
-  end
+def print_footer(students)
+  puts "Overall, we have #{students.count} great students"
 end
 
 
-def print_footer(names)
-  puts "Overall we have #{names.count} great students"
-end
-
-def short_names(students)
-  puts students[:name].length
-end
-# now we must call upon the methods
-
-students = input_students
-print_header
-print(students)
-print_footer(students)
+interactive_menu
