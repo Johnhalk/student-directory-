@@ -2,25 +2,28 @@
 
 student_count = 11
 
-puts "The student of Villains Academy"
-puts "-----------------"
-puts "Dr. Hannibal Lecter"
-puts "Darth Vader"
-puts "Nurse Ratched"
-puts "Michael Corleone"
-puts "Alex DeLarge"
-puts "The Wicked Witch of the West"
-puts "Terminator"
-puts "Freddy Krueger"
-puts "The Joker"
-puts "Joffery Baratheon"  # he WOULD be there.
-puts "Norman Bates"
+students = [
+ "Dr. Hannibal Lecter",
+ "Darth Vader",
+ "Nurse Ratched",
+ "Michael Corleone",
+ "Alex DeLarge",
+ "The Wicked Witch of the West",
+ "Terminator",
+ "Freddy Krueger",
+ "The Joker",
+ "Joffery Baratheon",  # he WOULD be there.
+ "Norman Bates"
+]
 
-#finally we print the total number of students with the puts command
-print "Overall we have "
+# and now print them
 
-#it's important that print() doesn't add new line characters
+puts "The students of Villains Academy"
+puts " ----------------- "
+students.each do |student|
+  puts student
+end
 
-print student_count
 
-puts " great students!"
+#finally we print the total
+puts "Overall, we have #{student_count} great students"
