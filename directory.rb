@@ -1,21 +1,6 @@
 #first we print the list of students
 
-student_count = 11
 
-students = [
- {name: "Dr. Hannibal Lecter", cohort: :november},
- {name: "Darth Vader", cohort: :november},
- {name: "Nurse Ratched", cohort: :november},
- {name: "Michael Corleone", cohort: :november},
- {name: "Alex DeLarge", cohort: :november},
- {name: "The Wicked Witch of the West", cohort: :november},
- {name: "Terminator", cohort: :november},
- {name: "Freddy Krueger", cohort: :november},
- {name: "The Joker", cohort: :november},
- {name: "Joffery Baratheon", cohort: :november}, # he WOULD be there.
- {name: "Norman Bates", cohort: :november}
-]
-# replace the [] array brackets with {} for hashes
 def print_header
   puts "The students of Villains Academy"
   puts " ---------------- "
